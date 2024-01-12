@@ -26,8 +26,8 @@ Auth::routes();
 Route::get('/student/create', [Studentcontroller::class,'create'])->name('student.create');
 Route::post('/student/store', [Studentcontroller::class,'store'])->name('student.store');
 Route::get('/student', [Studentcontroller::class,'index'])->name('student.index');
-Route::get('/student/edit', [Studentcontroller::class,'edit'])->name('student.edit');
-Route::get('/student/show', [Studentcontroller::class,'show'])->name('student.show');
+Route::get('/student/{student}/edit', [Studentcontroller::class,'edit'])->name('student.edit');
+Route::get('/student/{student}', [Studentcontroller::class,'show'])->name('student.show');
 
-Route::delete('/student/destroy', [Studentcontroller::class,'destroy'])->name('student.destroy');
-Route::put('/student/update', [Studentcontroller::class,'update'])->name('student.update');
+Route::delete('/student/{student}', [Studentcontroller::class,'destroy'])->name('student.destroy');
+Route::put('/student/{student}', [Studentcontroller::class,'update'])->name('student.update');

@@ -8,8 +8,8 @@
                     <div class="card-body m-3">
                         <div class="">
                             <form action="{{route('student.update', $student->id)}}" method="post">
-                                @csrf
-                                @method('PUT')
+                            @csrf
+                            @method('PUT')
 
                                 <div class="mb-3 mt-3">
                                     <label  class="form-label">Name</label>
@@ -34,7 +34,7 @@
                                     <input type="text" name = "totalmark"  class="form-control" value="{{ $student->totalmark }}">
 
                                     @error('size')
-                                    <div class="text-danger">* {{ $message }}</div>
+                                        <div class="text-danger">* {{ $message }}</div>
                                     @enderror
 
                                 </div>
@@ -43,7 +43,7 @@
                                     <input type="text" name = "level"  class="form-control" value="{{ $student->level }}">
 
                                     @error('level')
-                                    <div class="text-danger">* {{ $message }}</div>
+                                        <div class="text-danger">* {{ $message }}</div>
                                     @enderror
 
                                 </div>

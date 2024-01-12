@@ -27,7 +27,7 @@
 
                             @foreach ($students as $student)
                             <tr>
-                                <th scope="row">{{ $student->id }}</th>
+                                <th scope="row">{{ $student->id}}</th>
                                 <td>{{ $student->name }}</td>
                                 <td>{{ $student->rollnumber }}</td>
                                 <td>{{ $student->totalmark }}</td>
@@ -35,18 +35,19 @@
                                 <td>
                                     <div class="d-flex justify-content-center" >
                                         <a href="{{ route('student.edit', $student->id) }}" class="btn btn-outline-warning">
-                                        <i class="fas fa-pencil-alt"></i>
+                                            <i class="fas fa-pencil-alt"></i>
                                         </a>
                                         <a href="{{ route('student.show', $student->id) }}" class="btn btn-outline-info">
                                             <i class="fas fa-info"></i>
                                         </a>
-                                    
 
-                                        <form method="post" action = "{{ route('student.destroy', $student->id) }}" class="d-inline-block">
-                                            @method('delete')
-                                            @csrf
-                                            <button class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i></button>
-                                        </form>
+                                        <div>
+                                            <form method="post" action = "{{ route('student.destroy', $student->id) }}" class="d-inline-block">
+                                                @method('delete')
+                                                @csrf
+                                                <button class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i></button>
+                                            </form>
+                                        </div>
                                     </div>
                                 </td>
                             </tr>
